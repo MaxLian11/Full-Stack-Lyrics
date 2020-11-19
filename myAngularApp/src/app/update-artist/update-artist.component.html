@@ -1,0 +1,9 @@
+<h3>Update Artist</h3>
+
+<form (ngSubmit) = "onSubmit()">
+    <div class = "form-group">
+        <label>Artist name</label>
+        <input type = "text" class = "form-control" id = "name" [(ngModel)] = "artist.name" name = "name" >
+    </div>
+    <button class = "btn btn-success" type = "submit"> Submit</button>
+</form>

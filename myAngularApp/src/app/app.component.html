@@ -1,0 +1,26 @@
+<nav class = "navbar navbar-expand-sm bg-primary navbar-dark">
+  
+  <div>
+    <button *ngIf="!isAuthenticated" (click)="oktaAuth.signInWithRedirect()"  class = "btn btn-dark">Login</button>
+    <button *ngIf="isAuthenticated" (click)="oktaAuth.signOut()"  class = "btn btn-dark">Logout</button>
+  </div>
+  <ul class = "navbar-nav">
+    <li class = "nav-item">
+      <a routerLink = "artists" routerLinkActive = "active" class = "nav-link">View Artists</a>
+    </li>
+    <li class = "nav-item">
+      <a routerLink = "create-artist" routerLinkActive = "active" class = "nav-link">Add Artist</a>
+    </li>
+  </ul>
+</nav>
+
+<h1 class="text-center"> {{title}}</h1>
+
+<div class = "container">
+  <router-outlet></router-outlet>
+</div>
+<footer class = "footer">
+  <div class = "container2">
+    <span>Max Bogatyrov. COMP 586. Fall 2020</span>
+  </div>
+</footer>
