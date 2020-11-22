@@ -1,4 +1,7 @@
 export class Artist {
     id: number;
-    name: string;
+    artistName: string;
+    country: string;
+    genre: string;
+    reviews: Song[];
 }

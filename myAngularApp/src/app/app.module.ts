@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { UpdateArtistComponent } from './update-artist/update-artist.component';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
 import { AuthRoutingModule } from './auth-routing.module';
+import { SongsListComponent } from './songs-list/songs-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AuthRoutingModule } from './auth-routing.module';
     ArtistListComponent,
     CreateArtistComponent,
     UpdateArtistComponent,
-    ArtistDetailsComponent
+    ArtistDetailsComponent,
+    SongsListComponent
   ],
   imports: [
     BrowserModule,

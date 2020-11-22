@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { OktaAuthService } from '@okta/okta-angular';
 import { Artist } from '../artist';
 import { ArtistService } from '../artist.service';
 
@@ -12,10 +13,15 @@ export class ArtistListComponent implements OnInit {
 
   artists: Artist[];
 
-  constructor(private artistService: ArtistService, private router: Router) { }
+  constructor(private artistService: ArtistService, private router: Router, public oktaAuth: OktaAuthService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.getArtists();
+    this.isAuthenticated = await this.oktaAuth.isAuthenticated();
+    // Subscribe to authentication state changes
+    this.oktaAuth.$authenticationState.subscribe(
+      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
+    );
   }
 
   private getArtists(){
@@ -38,4 +44,10 @@ export class ArtistListComponent implements OnInit {
   artistDetails(id: number) {
     this.router.navigate(['artist-details', id]);
   }
+
+
+  isAuthenticated: boolean = false;
+
+
+
 }

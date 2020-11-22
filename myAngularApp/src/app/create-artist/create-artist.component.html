@@ -3,7 +3,11 @@
 <form (ngSubmit) = "onSubmit()">
     <div class = "form-group">
         <label>Artist name</label>
-        <input type = "text" class = "form-control" id = "name" [(ngModel)] = "artist.name" name = "name" >
+        <input type = "text" class = "form-control" id = "artistName" [(ngModel)] = "artist.artistName" name = "artistName" >
+        <label>Country</label>
+        <input type = "text" class = "form-control" id = "country" [(ngModel)] = "artist.country" name = "country" >
+        <label>Genre</label>
+        <input type = "text" class = "form-control" id = "genre" [(ngModel)] = "artist.genre" name = "country" >
     </div>
     <button class = "btn btn-success" type = "submit"> Submit</button>
 </form>

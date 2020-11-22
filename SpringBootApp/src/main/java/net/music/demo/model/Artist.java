@@ -1,22 +1,33 @@
 package net.music.demo.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "artist")
+@Table(name = "artists")
 public class Artist {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "artist_name")
+    private String artistName;
+    @Column(name = "country")
+    private String country;
+    @Column(name = "genre")
+    private String genre;
 
-    public Artist() {}
 
-    public Artist(String name) {
-        super();
-        this.name = name;
+    public Artist() {
+    }
+
+    public Artist(String artistName, String country, String genre) {
+        this.artistName = artistName;
+        this.country = country;
+        this.genre = genre;
     }
 
     public long getId() {
@@ -27,11 +38,28 @@ public class Artist {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+
+    public String getArtistName() {
+        return artistName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 }
