@@ -3,5 +3,4 @@ export class Artist {
     artistName: string;
     country: string;
     genre: string;
-    reviews: Song[];
 }

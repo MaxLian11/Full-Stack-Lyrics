@@ -20,6 +20,9 @@ public class Artist {
     @Column(name = "genre")
     private String genre;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "artist")
+    private List<Song> songs;
+
 
     public Artist() {
     }

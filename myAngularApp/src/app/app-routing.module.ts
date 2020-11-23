@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: 'create-artist', component: CreateArtistComponent },
   { path: '', redirectTo: 'artists', pathMatch: 'full' },
   { path: 'update-artist/:id', component: UpdateArtistComponent },
-  { path: 'artist-details/:id', component: ArtistDetailsComponent }
-  { path: 'songs:', component: SongsListComponent }
+  { path: 'artist-details/:id', component: ArtistDetailsComponent },
+  { path: 'songs', component: SongsListComponent }
 ];
 
 @NgModule({

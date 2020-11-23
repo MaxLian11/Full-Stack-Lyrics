@@ -16,10 +16,8 @@ public class Song {
     private Long id;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "artist", nullable = false)
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
     private Artist artist;
 
     @Column(name = "song_name", columnDefinition = "VARCHAR(50)")

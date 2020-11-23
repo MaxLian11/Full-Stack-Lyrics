@@ -11,14 +11,19 @@
     <li class = "nav-item">
       <a routerLink = "create-artist" routerLinkActive = "active" class = "nav-link">Add Artist</a>
     </li>
+    <li class = "nav-item">
+      <a routerLink = "songs" routerLinkActive = "active" class = "nav-link">All Songs</a>
+    </li>
   </ul>
 </nav>
 
 <h1 class="text-center"> {{title}}</h1>
 
 <div class = "container">
+  <!-- components here -->
   <router-outlet></router-outlet>
 </div>
+
 <footer class = "footer">
   <div class = "container2">
     <span>Max Bogatyrov. COMP 586. Fall 2020</span>

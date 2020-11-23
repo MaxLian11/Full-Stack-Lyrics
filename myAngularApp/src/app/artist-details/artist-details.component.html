@@ -5,29 +5,4 @@
         <label><b> Country: </b></label> {{artist.country}}
         <label><b> Genre: </b></label> {{artist.genre}}
     </div>
-    <div>
-        <table class = "table">
-            <thead>
-                <tr>
-                    <th>Song</th>
-                    <th>Album</th>
-                    <th>Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor = "let artist of artists">
-                    <td> {{ song.songName }}</td>
-                    <td> {{ song.album }}</td>
-                    <td> {{ song.year }}</td>
-        
-                    <td *ngIf="isAuthenticated">
-                        <button (click) = "songDetails(artist.id)" class = "btn btn-success">View</button>
-                        <button (click) = "deleteArtist(artist.id)" class = "btn btn-danger" style = "margin-left: 15px">Delete</button>
-                    </td>
-                    <td *ngIf="!isAuthenticated">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 </div>

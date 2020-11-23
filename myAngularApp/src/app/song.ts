@@ -1,7 +1,11 @@
-export class Artist {
+
+import { Artist } from './artist';
+
+export class Song {
     id: number;
-    songName: string;
-    album: string;
-    year: number;
     artist: Artist;
+    songName: String;
+    album: String;
+    lyrics: String;
+    year: 2020
 }

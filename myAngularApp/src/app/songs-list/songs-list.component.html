@@ -1,1 +1,19 @@
-<p>songs-list works!</p>
+<h2>Songs</h2>
+<table class = "table">
+    <thead>
+        <tr>
+            <th>Songs</th>
+            <th>Artist</th>
+            <th>Album</th>
+            <th>Year</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let song of songs">
+            <td> {{ song.songName }}</td>
+            <td> {{ song.artist.artistName }}</td>
+            <td> {{ song.album }}</td>
+            <td> {{ song.year }}</td>
+        </tr>
+    </tbody>
+</table>
