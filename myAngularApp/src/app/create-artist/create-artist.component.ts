@@ -18,6 +18,8 @@ export class CreateArtistComponent implements OnInit {
   }
 
   saveArtist(){
+    
+    this.artist.id = null;
     this.artistService.createArtist(this.artist).subscribe( data =>{
       console.log(data);
       this.goToArtistList();

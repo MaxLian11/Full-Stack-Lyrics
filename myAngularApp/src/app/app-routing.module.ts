@@ -5,6 +5,8 @@ import { ArtistListComponent } from './artist-list/artist-list.component';
 import { CreateArtistComponent } from './create-artist/create-artist.component';
 import { UpdateArtistComponent } from './update-artist/update-artist.component';
 import { SongsListComponent } from './songs-list/songs-list.component';
+import { SongLyricsComponent } from './song-lyrics/song-lyrics.component';
+import { CreateSongComponent } from './create-song/create-song.component';
 
 const routes: Routes = [
   { path: 'artists', component: ArtistListComponent },
@@ -12,7 +14,9 @@ const routes: Routes = [
   { path: '', redirectTo: 'artists', pathMatch: 'full' },
   { path: 'update-artist/:id', component: UpdateArtistComponent },
   { path: 'artist-details/:id', component: ArtistDetailsComponent },
-  { path: 'songs', component: SongsListComponent }
+  { path: 'songs', component: SongsListComponent },
+  { path: 'song-lyrics/:id', component: SongLyricsComponent },
+  { path: 'create-song', component: CreateSongComponent }
 ];
 
 @NgModule({

@@ -15,4 +15,16 @@ export class SongService {
   getSongsList(): Observable<Song[]>{
     return this.httpClient.get<Song[]>(`${this.baseURL}`);
   }
+
+  getSongById(id: number): Observable<Song> {
+    return this.httpClient.get<Song>(`${this.baseURL}/${id}`);
+  }
+
+  createSong(song: Song): Observable<Object>{
+    return this.httpClient.post(`${this.baseURL}`, song);
+  }
+
+  deleteSong(id: number): Observable<Object> {
+    return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
 }

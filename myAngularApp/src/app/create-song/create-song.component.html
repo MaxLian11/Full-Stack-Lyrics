@@ -1,0 +1,25 @@
+<h3>Add Song</h3>
+
+<form (ngSubmit) = "onSubmit()">
+    <div class = "form-group">
+        <label>Song name</label>
+        <input type = "text" class = "form-control" id = "songName" [(ngModel)] = "song.songName" name = "songName" >
+        <label>Album</label>
+        <input type = "text" class = "form-control" id = "album" [(ngModel)] = "song.album" name = "album" >
+        <label>Artist</label>
+        <form  [formGroup]="createSongForm">
+            <select class="selectpicker" formControlName="artist">
+                <option value="" selected disabled hidden>Select Artist</option>
+                <option *ngFor="let artist of artists" [ngValue]="artist"> {{ artist.artistName }}</option>
+            </select>
+            <div *ngIf="artist.invalid" class="error">
+                Artist field is required.
+            </div>
+        </form>
+        <label>Lyrics</label>
+        <input type = "text" class = "form-control" id = "lyrics" [(ngModel)] = "song.lyrics" name = "lyrics" >
+        <label>Year</label>
+        <input type = "number" class = "form-control" id = "year" [(ngModel)] = "song.year" name = "year" >
+    </div>
+    <button class = "btn btn-success" type = "submit"> Submit</button>
+</form>

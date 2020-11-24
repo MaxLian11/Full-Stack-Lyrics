@@ -10,7 +10,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin("http://localhost:4200")
@@ -29,7 +31,7 @@ public class SongController {
 
     // post new song
     @PostMapping("/songs")
-    public Song createArtist(@RequestBody Song song) {
+    public Song createSong(@RequestBody Song song) {
         return songRepository.save(song);
     }
 
@@ -45,5 +47,18 @@ public class SongController {
     public List<Song> getAllSongsByArtistId(@PathVariable Long id) {
         return songRepository.findByArtistId(id);
     }
+
+    // delete song
+    @DeleteMapping("/songs/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteSong(@PathVariable Long id) {
+
+        Song song = songRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Song Not Found With ID: " + id));
+        songRepository.delete(song);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return ResponseEntity.ok(response);
+
+    }
+
 
 }

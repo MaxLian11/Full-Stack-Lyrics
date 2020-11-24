@@ -1,19 +1,28 @@
 <nav class = "navbar navbar-expand-sm bg-primary navbar-dark">
   
   <div>
-    <button *ngIf="!isAuthenticated" (click)="oktaAuth.signInWithRedirect()"  class = "btn btn-dark">Login</button>
-    <button *ngIf="isAuthenticated" (click)="oktaAuth.signOut()"  class = "btn btn-dark">Logout</button>
+    <button style="font-size:20px;" *ngIf="!isAuthenticated" (click)="oktaAuth.signInWithRedirect()"  class = "btn btn-dark">Login</button>
+    <button style="font-size:20px;" *ngIf="isAuthenticated" (click)="oktaAuth.signOut()"  class = "btn btn-dark">Logout</button>
   </div>
   <ul class = "navbar-nav">
+
     <li class = "nav-item">
-      <a routerLink = "artists" routerLinkActive = "active" class = "nav-link">View Artists</a>
+      <a style="font-size:20px;" routerLink = "artists" routerLinkActive = "active" class = "nav-link">View Artists</a>
     </li>
+
+    <li class = "nav-item" *ngIf="isAuthenticated">
+      <a style="font-size:20px;" routerLink = "create-artist" routerLinkActive = "active" class = "nav-link">Add Artist</a>
+    </li>
+    <li *ngIf="!isAuthenticated"></li>
+
     <li class = "nav-item">
-      <a routerLink = "create-artist" routerLinkActive = "active" class = "nav-link">Add Artist</a>
+      <a style="font-size:20px;" routerLink = "songs" routerLinkActive = "active" class = "nav-link">All Songs</a>
     </li>
-    <li class = "nav-item">
-      <a routerLink = "songs" routerLinkActive = "active" class = "nav-link">All Songs</a>
+
+    <li class = "nav-item" *ngIf="isAuthenticated">
+      <a style="font-size:20px;" routerLink = "create-song" routerLinkActive = "active" class = "nav-link">Add Song</a>
     </li>
+    <li *ngIf="!isAuthenticated"></li>
   </ul>
 </nav>
 
@@ -23,7 +32,7 @@
   <!-- components here -->
   <router-outlet></router-outlet>
 </div>
-
+<br>
 <footer class = "footer">
   <div class = "container2">
     <span>Max Bogatyrov. COMP 586. Fall 2020</span>

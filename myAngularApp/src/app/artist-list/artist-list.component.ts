@@ -17,8 +17,9 @@ export class ArtistListComponent implements OnInit {
 
   async ngOnInit() {
     this.getArtists();
+
+    // check if user is authenticated
     this.isAuthenticated = await this.oktaAuth.isAuthenticated();
-    // Subscribe to authentication state changes
     this.oktaAuth.$authenticationState.subscribe(
       (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
     );
@@ -40,7 +41,7 @@ export class ArtistListComponent implements OnInit {
       this.getArtists();
     })
   }
-
+  
   artistDetails(id: number) {
     this.router.navigate(['artist-details', id]);
   }

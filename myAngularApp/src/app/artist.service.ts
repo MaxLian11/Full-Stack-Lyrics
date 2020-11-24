@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Artist } from './artist';
+import { Song } from './song';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,9 @@ export class ArtistService {
 
   deleteArtist(id: number): Observable<Object> {
     return this.httpClient.delete(`${this.baseURL}/${id}`);
+  }
+
+  getSongsByArtist(id: string): Observable<Song[]> {
+    return this.httpClient.get<Song[]>(`${this.baseURL}/${id}/songs`);
   }
 }
