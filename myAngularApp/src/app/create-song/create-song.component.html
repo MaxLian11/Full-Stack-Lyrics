@@ -1,25 +1,32 @@
 <h3>Add Song</h3>
-
+<br>
 <form (ngSubmit) = "onSubmit()">
-    <div class = "form-group">
-        <label>Song name</label>
+    <div style="font-size:16px;" class = "form-group">
+        <label><b>Song name</b></label>
         <input type = "text" class = "form-control" id = "songName" [(ngModel)] = "song.songName" name = "songName" >
-        <label>Album</label>
+        <br>
+        <label><b>Album</b></label>
         <input type = "text" class = "form-control" id = "album" [(ngModel)] = "song.album" name = "album" >
-        <label>Artist</label>
-        <form  [formGroup]="createSongForm">
-            <select class="selectpicker" formControlName="artist">
+        <br>
+        <label><b>Artist</b></label>
+        <form [formGroup]="createSongForm">
+            <select style="font-size:20px;font-weight:bold;" class="selectpicker" formControlName="artist">
                 <option value="" selected disabled hidden>Select Artist</option>
-                <option *ngFor="let artist of artists" [ngValue]="artist"> {{ artist.artistName }}</option>
+                <option style="font-size:25px;font-weight:bold;" *ngFor="let artist of artists" [ngValue]="artist"> {{ artist.artistName }}</option>
             </select>
             <div *ngIf="artist.invalid" class="error">
                 Artist field is required.
             </div>
         </form>
-        <label>Lyrics</label>
-        <input type = "text" class = "form-control" id = "lyrics" [(ngModel)] = "song.lyrics" name = "lyrics" >
-        <label>Year</label>
-        <input type = "number" class = "form-control" id = "year" [(ngModel)] = "song.year" name = "year" >
+        <br>
+        <label><b>Lyrics</b></label>
+        <textarea type = "text" style="height:500px;" class = "form-control" id = "lyrics" [(ngModel)] = "song.lyrics" name = "lyrics" ></textarea>
+        <br>
+        <label><b>Year</b></label>
+        <input type = "number" class = "form-control" id = "year" [(ngModel)] = "song.year" name = "year">
     </div>
-    <button class = "btn btn-success" type = "submit"> Submit</button>
+    <button style="font-size:25px;" class = "btn btn-success" type = "submit"> Submit</button>
+    <br>
+    <br>
+    <br>
 </form>
