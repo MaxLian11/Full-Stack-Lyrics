@@ -2,6 +2,7 @@
   
   <div>
     <button style="font-size:20px;" *ngIf="!isAuthenticated" (click)="oktaAuth.signInWithRedirect()"  class = "btn btn-dark">Login</button>
+    
     <button style="font-size:20px;" *ngIf="isAuthenticated" (click)="oktaAuth.signOut()"  class = "btn btn-dark">Logout</button>
   </div>
   <ul class = "navbar-nav">
@@ -26,6 +27,7 @@
   </ul>
 </nav>
 
+<div *ngIf="isAuthenticated"><p><br><b>Welcome:</b> {{ userName  }}</p></div>
 <h1 class="text-center"> {{title}}</h1>
 
 <div class = "container">

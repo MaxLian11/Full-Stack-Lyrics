@@ -1,11 +1,6 @@
 package net.music.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "songs")

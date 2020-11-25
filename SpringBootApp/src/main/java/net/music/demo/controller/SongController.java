@@ -1,12 +1,9 @@
 package net.music.demo.controller;
 
 import net.music.demo.exception.ResourceNotFoundException;
-import net.music.demo.model.Artist;
 import net.music.demo.model.Song;
 import net.music.demo.repository.Song_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +12,6 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin("http://localhost:4200")
 @RequestMapping("/api/")
 public class SongController {
 
