@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OktaAuthService } from '@okta/okta-angular';
-import { Artist } from '../artist';
-import { ArtistService } from '../artist.service';
+import { Artist } from '../../models/artist';
+import { ArtistService } from '../../services/artist.service';
 
 @Component({
   selector: 'app-artist-list',

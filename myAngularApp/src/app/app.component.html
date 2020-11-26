@@ -6,7 +6,7 @@
   <ul class = "navbar-nav" *ngIf="isAuthenticated">
 
     <li class = "nav-item">
-      <a style="font-size:20px;" routerLink = "artists" routerLinkActive = "active" class = "nav-link">View Artists</a>
+      <a style="font-size:20px;" routerLink = "home" routerLinkActive = "active" class = "nav-link">View Artists</a>
     </li>
 
     <li class = "nav-item">
@@ -29,7 +29,7 @@
 
 <div class="container"  *ngIf="!isAuthenticated">
   <h1 class="text-center">
-    Please, log in to enter the web-site! :)
+    Please, log in to enter the website! :)
   </h1>
   <div class="text-center">
     <button style="font-size:20px;" (click)="oktaAuth.signInWithRedirect()"  class = "btn btn-dark">Login</button>
@@ -37,8 +37,8 @@
 </div>
 
 <div class = "container" >
-  <!-- components here -->
-  <router-outlet ></router-outlet>
+  <!-- components -->
+  <router-outlet></router-outlet>
 </div>
 <br>
 <br>

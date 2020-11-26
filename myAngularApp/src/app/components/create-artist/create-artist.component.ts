@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Artist } from '../artist';
-import { ArtistService } from '../artist.service';
+import { Artist } from '../../models/artist';
+import { ArtistService } from '../../services/artist.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
 export class CreateArtistComponent implements OnInit {
 
   artist: Artist = new Artist();
-  constructor(private artistService: ArtistService,
-    private router: Router) { }
+  constructor(private artistService: ArtistService, private router: Router) { }
 
   ngOnInit(): void {
   }

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Song } from '../song';
-import { SongService } from '../song.service';
+import { Song } from '../../models/song';
+import { SongService } from '../../services/song.service';
 import { Router } from '@angular/router';
-import { Artist } from '../artist';
-import { ArtistService } from '../artist.service';
+import { Artist } from '../../models/artist';
+import { ArtistService } from '../../services/artist.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({

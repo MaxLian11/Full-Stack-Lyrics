@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Artist } from '../artist';
+import { Artist } from '../../models/artist';
 import { ActivatedRoute } from '@angular/router';
-import { ArtistService } from '../artist.service';
+import { ArtistService } from '../../services/artist.service';
 
 @Component({
   selector: 'app-artist-details',

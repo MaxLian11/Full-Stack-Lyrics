@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OktaAuthService } from '@okta/okta-angular';
 
 @Component({
@@ -9,10 +10,10 @@ import { OktaAuthService } from '@okta/okta-angular';
 export class AppComponent implements OnInit {
   userName: string;
   title = 'angular-app';
-  isAuthenticated: boolean = false;
 
-  constructor(public oktaAuth: OktaAuthService) {
-  }
+
+  // reroute to home page
+  constructor(public oktaAuth: OktaAuthService, private router: Router) {  }
 
   async ngOnInit() {
 
@@ -27,5 +28,9 @@ export class AppComponent implements OnInit {
 
     // user name is exposed directly as property
     this.userName = userClaims.name;
+
+    
   }
+  
+  isAuthenticated: boolean = false;
 }

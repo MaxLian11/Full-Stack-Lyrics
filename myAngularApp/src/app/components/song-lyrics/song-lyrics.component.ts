@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Song } from '../song';
-import { SongService } from '../song.service';
+import { Song } from '../../models/song';
+import { SongService } from '../../services/song.service';
 
 @Component({
   selector: 'app-song-lyrics',

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OktaAuthService } from '@okta/okta-angular';
-import { ArtistService } from '../artist.service';
-import { Song } from '../song';
-import { SongService } from '../song.service';
+import { ArtistService } from '../../services/artist.service';
+import { Song } from '../../models/song';
+import { SongService } from '../../services/song.service';
 
 @Component({
   selector: 'app-artist-songs',
