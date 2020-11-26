@@ -1,39 +1,47 @@
 <nav class = "navbar navbar-expand-sm bg-primary navbar-dark">
   
   <div>
-    <button style="font-size:20px;" *ngIf="!isAuthenticated" (click)="oktaAuth.signInWithRedirect()"  class = "btn btn-dark">Login</button>
-    
     <button style="font-size:20px;" *ngIf="isAuthenticated" (click)="oktaAuth.signOut()"  class = "btn btn-dark">Logout</button>
   </div>
-  <ul class = "navbar-nav">
+  <ul class = "navbar-nav" *ngIf="isAuthenticated">
 
     <li class = "nav-item">
       <a style="font-size:20px;" routerLink = "artists" routerLinkActive = "active" class = "nav-link">View Artists</a>
     </li>
 
-    <li class = "nav-item" *ngIf="isAuthenticated">
+    <li class = "nav-item">
       <a style="font-size:20px;" routerLink = "create-artist" routerLinkActive = "active" class = "nav-link">Add Artist</a>
     </li>
-    <li *ngIf="!isAuthenticated"></li>
 
     <li class = "nav-item">
       <a style="font-size:20px;" routerLink = "songs" routerLinkActive = "active" class = "nav-link">All Songs</a>
     </li>
 
-    <li class = "nav-item" *ngIf="isAuthenticated">
+    <li class = "nav-item">
       <a style="font-size:20px;" routerLink = "create-song" routerLinkActive = "active" class = "nav-link">Add Song</a>
     </li>
-    <li *ngIf="!isAuthenticated"></li>
   </ul>
 </nav>
 
-<div *ngIf="isAuthenticated"><p><br><b>Welcome:</b> {{ userName  }}</p></div>
-<h1 class="text-center"> {{title}}</h1>
+<div *ngIf="isAuthenticated"><p><br><b> &nbsp; Welcome</b> {{ userName }}!</p></div>
 
-<div class = "container">
-  <!-- components here -->
-  <router-outlet></router-outlet>
+<h1 class="text-center"> Find your Lyrics! </h1>
+
+<div class="container"  *ngIf="!isAuthenticated">
+  <h1 class="text-center">
+    Please, log in to enter the web-site! :)
+  </h1>
+  <div class="text-center">
+    <button style="font-size:20px;" (click)="oktaAuth.signInWithRedirect()"  class = "btn btn-dark">Login</button>
+  </div>
 </div>
+
+<div class = "container" >
+  <!-- components here -->
+  <router-outlet ></router-outlet>
+</div>
+<br>
+<br>
 <br>
 <footer class = "footer">
   <div class = "container2">

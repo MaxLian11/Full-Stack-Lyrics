@@ -20,10 +20,10 @@ public class SongController {
     private ResponseEntity<Object> ReponseEntity;
 
     // get all songs
-    @GetMapping("/songs")
-    public List<Song> getAllSongs() {
-        return songRepository.findAll();
-    }
+//    @GetMapping("/songs")
+//    public List<Song> getAllSongs() {
+//        return songRepository.findAll();
+//    }
 
     // post new song
     @PostMapping("/songs")

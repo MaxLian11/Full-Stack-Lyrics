@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OktaAuthService } from '@okta/okta-angular';
 import { ArtistService } from '../artist.service';
 import { Song } from '../song';
+import { SongService } from '../song.service';
 
 @Component({
   selector: 'app-artist-songs',
@@ -12,7 +13,7 @@ import { Song } from '../song';
 export class ArtistSongsComponent implements OnInit {
 
   songs: Song[];
-  constructor(private route: ActivatedRoute, private artistService: ArtistService, private router: Router, public oktaAuth: OktaAuthService) { }
+  constructor(private route: ActivatedRoute, private songService: SongService, private artistService: ArtistService, private router: Router, public oktaAuth: OktaAuthService) { }
 
   async ngOnInit() {
     this.getAllSongsByArtist();
@@ -38,6 +39,17 @@ export class ArtistSongsComponent implements OnInit {
     this.router.navigate(['song-lyrics', id]);
   }
 
+  private getSongs() {
+    this.songService.getSongsList().subscribe(data => {
+      this.songs = data;
+    })
+  }
+  deleteSong(id: number) {
+    this.songService.deleteSong(id).subscribe(data => {
+      console.log(data);
+      this.getSongs();
+    })
+  }
    // set status
    isAuthenticated: boolean = false;
 }

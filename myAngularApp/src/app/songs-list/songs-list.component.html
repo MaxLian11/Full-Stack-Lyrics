@@ -14,14 +14,14 @@
     <tbody>
         <tr *ngFor = "let song of songs">
             <td> {{ song.songName }}</td>
-            <td> {{ song.artist.artistName }}</td>
+            <td> {{ song.artistName }}</td>
             <td> {{ song.album }}</td>
             <td> {{ song.year }}</td>
             <td>
-                <button (click) = "songLyrics(song.id)" class = "btn btn-success">Lyrics</button>
+                <button (click) = "songLyrics(song.song_id)" class = "btn btn-success">Lyrics</button>
             </td>
             <td *ngIf="isAuthenticated">
-                <button (click) = "deleteSong(song.id)" class = "btn btn-danger">Delete</button>
+                <button (click) = "deleteSong(song.song_id)" class = "btn btn-danger">Delete</button>
             </td>
             <td *ngIf="!isAuthenticated">
             </td>

@@ -15,15 +15,17 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
+
+    this.isAuthenticated = await this.oktaAuth.isAuthenticated();
+    this.oktaAuth.$authenticationState.subscribe(
+      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
+      
+    );
+    
     // returns an object with user's claims
     const userClaims = await this.oktaAuth.getUser();
 
     // user name is exposed directly as property
     this.userName = userClaims.name;
-
-    this.isAuthenticated = await this.oktaAuth.isAuthenticated();
-    this.oktaAuth.$authenticationState.subscribe(
-      (isAuthenticated: boolean)  => this.isAuthenticated = isAuthenticated
-    );
   }
 }

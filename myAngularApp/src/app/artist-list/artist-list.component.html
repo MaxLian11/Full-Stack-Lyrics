@@ -1,3 +1,4 @@
+<div *ngIf="isAuthenticated">
 <h2>Artists</h2>
 <table class = "table">
     <thead>
@@ -6,8 +7,7 @@
             <th>Country</th>
             <th>Genre</th>
             <th>Songs</th>
-            <th *ngIf="isAuthenticated">Actions</th>
-            <th *ngIf="!isAuthenticated"></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -16,12 +16,12 @@
             <td> {{ artist.country }}</td>
             <td> {{ artist.genre }}</td>
             <td><button (click) = "artistDetails(artist.id)" class = "btn btn-success">View</button></td>
-            <td *ngIf="isAuthenticated">
+            <td>
                 <button (click) = "updateArtist(artist.id)" class = "btn btn-info" style = "margin-left: -30px">Edit</button>
                 <button (click) = "deleteArtist(artist.id)" class = "btn btn-danger" style = "margin-left: 15px">Delete</button>
             </td>
-            <td *ngIf="!isAuthenticated">
-            </td>
+          
         </tr>
     </tbody>
 </table>
+</div>

@@ -2,7 +2,6 @@ package net.music.demo.controller;
 
 import net.music.demo.exception.ResourceNotFoundException;
 import net.music.demo.model.Artist;
-import net.music.demo.repository.Song_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +17,6 @@ public class ArtistController {
 
     @Autowired
     private Artist_Repository artistRepository;
-    private Song_Repository songRepository;
     private ResponseEntity<Object> ReponseEntity;
 
     // get all artists

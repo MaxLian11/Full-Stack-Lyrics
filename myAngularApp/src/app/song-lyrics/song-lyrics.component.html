@@ -1,7 +1,7 @@
 <h3>Song Lyrics</h3>
 <div>
     <div><br>
-        <b> Artist: </b> {{song.artist.artistName}}<br> 
+        <b> Artist: </b> {{song?.artist.artistName}}<br> 
         <b> Song: </b> {{song.songName}}<br> <br>
         <b> Lyrics:</b><br>
         <div ng-bind="textFromJSON" style="white-space:pre-wrap">{{song.lyrics}}</div>

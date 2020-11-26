@@ -4,7 +4,7 @@
             <th>Song</th>
             <th>Album</th>
             <th>Year</th>
-            <th>Lyrics</th>
+            <th></th>
             <th *ngIf="isAuthenticated">Actions</th>
             <th *ngIf="!isAuthenticated"></th>
         </tr>
@@ -15,7 +15,7 @@
             <td> {{ song.album }}</td>
             <td> {{ song.year }}</td>
             <td>
-                <button (click) = "songLyrics(song.id)" class = "btn btn-success">View</button>
+                <button (click) = "songLyrics(song.id)" class = "btn btn-success">Lyrics</button>
             </td>
             <td *ngIf="isAuthenticated">
                 <button (click) = "deleteSong(song.id)" class = "btn btn-danger">Delete</button>
