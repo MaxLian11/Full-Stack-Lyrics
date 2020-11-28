@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Artist } from '../models/artist';
 import { Song } from '../models/song';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArtistService {
 
-  private baseURL = "http://localhost:8080/api/artists";
+  private baseURL = `${environment.apiUrl}/api/artists`;
 
   constructor(private httpClient: HttpClient) { }
   
