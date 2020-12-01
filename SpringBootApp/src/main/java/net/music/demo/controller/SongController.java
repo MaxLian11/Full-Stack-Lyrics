@@ -19,12 +19,6 @@ public class SongController {
     private Song_Repository songRepository;
     private ResponseEntity<Object> ReponseEntity;
 
-    // get all songs
-//    @GetMapping("/songs")
-//    public List<Song> getAllSongs() {
-//        return songRepository.findAll();
-//    }
-
     // post new song
     @PostMapping("/songs")
     public Song createSong(@RequestBody Song song) {

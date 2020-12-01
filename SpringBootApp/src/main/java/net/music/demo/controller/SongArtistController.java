@@ -1,8 +1,7 @@
 package net.music.demo.controller;
 
-import net.music.demo.exception.ResourceNotFoundException;
 import net.music.demo.model.Artist;
-import net.music.demo.model.ViewModel;
+import net.music.demo.model.SongArtist;
 import net.music.demo.repository.Artist_Repository;
 import net.music.demo.repository.Song_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/api/")
-public class ViewModelController {
+public class SongArtistController {
 
     @Autowired
     private Artist_Repository artistRepository;
@@ -22,24 +21,22 @@ public class ViewModelController {
     @Autowired
     private Song_Repository songRepository;
 
-
     @GetMapping("/songs")
-    public ResponseEntity<List<ViewModel>> getAllSongs() {
-        List<ViewModel> viewModel = new ArrayList<>();
+    public ResponseEntity<List<SongArtist>> getAllSongs() {
+        List<SongArtist> viewModel = new ArrayList<>();
         songRepository.findAll().forEach(song -> {
 
-            Long id = song.getArtist().getId();
+            // returns an object "artist" with all fields
+            Artist artist = song.getArtist();
 
-            Artist artist = artistRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Artist Not Found With ID: " + id));
-
-            viewModel.add(new ViewModel(
+            viewModel.add(new SongArtist(
                     song.getId(),
-                    artist.getArtistName(),
+                    artist.getArtistName(),  // returns a single field "artistName"
                     song.getSongName(),
                     song.getAlbum(),
                     song.getYear()));
         });
 
-        return new ResponseEntity<List<ViewModel>>(viewModel, HttpStatus.ACCEPTED);
+        return new ResponseEntity<List<SongArtist>>(viewModel, HttpStatus.ACCEPTED);
     }
 }

@@ -11,11 +11,11 @@ public class Artist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "artist_name")
+    @Column(name = "artist_name", columnDefinition = "VARCHAR(50)")
     private String artistName;
-    @Column(name = "country")
+    @Column(name = "country", columnDefinition = "VARCHAR(50)")
     private String country;
-    @Column(name = "genre")
+    @Column(name = "genre", columnDefinition = "VARCHAR(50)")
     private String genre;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "artist")

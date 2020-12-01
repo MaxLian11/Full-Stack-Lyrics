@@ -1,7 +1,7 @@
 package net.music.demo.model;
 
 
-public class ViewModel {
+public class SongArtist {
 
     private Long song_id;
     private String artistName;
@@ -9,13 +9,12 @@ public class ViewModel {
     private String album;
     private int year;
 
-    public ViewModel(Long song_id, String artistName, String songName, String album, int year) {
+    public SongArtist(Long song_id, String artistName, String songName, String album, int year) {
         this.song_id = song_id;
         this.artistName = artistName;
         this.songName = songName;
         this.album = album;
         this.year = year;
-
     }
 
     public Long getSong_id() {

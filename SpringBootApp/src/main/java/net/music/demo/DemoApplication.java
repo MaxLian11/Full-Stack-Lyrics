@@ -26,15 +26,12 @@ public class DemoApplication extends SpringBootServletInitializer {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Value("#{ @environment['allowed.origins'] ?: {} }")
-	private String allowedOrigins;
-
 	@Bean
 	public FilterRegistrationBean<CorsFilter> simpleCorsFilter() {
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 		CorsConfiguration config = new CorsConfiguration();
 		config.setAllowCredentials(true);
-		config.setAllowedOrigins(Collections.singletonList(allowedOrigins));
+		config.setAllowedOrigins(Collections.singletonList("https://simple-lyrics.herokuapp.com"));
 		config.setAllowedMethods(Collections.singletonList("*"));
 		config.setAllowedHeaders(Collections.singletonList("*"));
 		source.registerCorsConfiguration("/**", config);
