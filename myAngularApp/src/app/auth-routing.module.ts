@@ -34,7 +34,7 @@ const routes: Routes = [
     CommonModule,
     HttpClientModule,
     OktaAuthModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ],
   providers: [
     { provide: OKTA_CONFIG, useValue: oktaConfig },

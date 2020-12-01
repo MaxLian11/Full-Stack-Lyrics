@@ -22,8 +22,16 @@
     </li>
   </ul>
 </nav>
-
-<div *ngIf="isAuthenticated"><p><br><b> &nbsp; Welcome</b> {{ userName }}!</p></div>
+<br>
+<div *ngIf="isAuthenticated && !userName"><button class = "btn btn-link" onClick="window.location.href=window.location.href">Show profile info</button></div>
+<div *ngIf="isAuthenticated && userName"><p>
+                                            <br><b> &nbsp; First name: </b> {{ firstName }}
+                                            <br><b> &nbsp; Last name: </b> {{ lastName }}
+                                            <br><b> &nbsp; Username: </b> {{ userName }}
+                                            <br><b> &nbsp; Zone info: </b> {{ zoneInfo }}
+                                            <br>
+                                          </p>
+                                      </div>
 
 <h1 class="text-center"> Find your Lyrics! </h1>
 

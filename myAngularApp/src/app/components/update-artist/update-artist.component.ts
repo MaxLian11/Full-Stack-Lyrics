@@ -28,7 +28,7 @@ export class UpdateArtistComponent implements OnInit {
   }
 
   goToArtistList(){
-    this.router.navigate(['/artists']);
+    this.router.navigate(['/home']);
   }
 
 }
