@@ -43,6 +43,8 @@ public class ArtistController {
     public ResponseEntity<Artist> updateArtist(@PathVariable Long id, @RequestBody Artist artistDetails) {
         Artist artist = artistRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Artist Not Found With ID: " + id));
         artist.setArtistName(artistDetails.getArtistName());
+        artist.setCountry(artistDetails.getCountry());
+        artist.setGenre(artistDetails.getGenre());
         Artist updatedArtist = artistRepository.save(artist);
         return ResponseEntity.ok(updatedArtist);
     }
