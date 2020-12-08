@@ -30,8 +30,6 @@ export class AppComponent implements OnInit {
     
     // returns an object with user's claims
     const userClaims = await this.oktaAuth.getUser();
-      console.log(userClaims);
-      
     // becayse of two "await" browser will show an error until the page is reloaded after slicked on "show user info"
     this.userName = userClaims.preferred_username;
     this.lastName = userClaims.family_name;

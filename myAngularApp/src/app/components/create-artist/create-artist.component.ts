@@ -20,7 +20,6 @@ export class CreateArtistComponent implements OnInit {
     
     this.artist.id = null;
     this.artistService.createArtist(this.artist).subscribe( data =>{
-      console.log(data);
       this.goToArtistList();
     },
     error => console.log(error));
@@ -31,7 +30,6 @@ export class CreateArtistComponent implements OnInit {
   }
   
   onSubmit(){
-    console.log(this.artist);
     this.saveArtist();
   }
 }

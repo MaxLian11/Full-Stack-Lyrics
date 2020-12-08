@@ -39,9 +39,6 @@ export class CreateSongComponent implements OnInit {
     this.song.artist = this.artist.value;
 
     this.songService.createSong(this.song).subscribe( data =>{
-    
-      console.log(data);
-      console.log(this.song);
       this.goToSongList();
     },
     error => console.log(error));
@@ -52,7 +49,6 @@ export class CreateSongComponent implements OnInit {
   }
   
   onSubmit(){
-    console.log(this.song);
     this.saveSong();
   }
 
