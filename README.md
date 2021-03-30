@@ -1,6 +1,6 @@
 # Full Stack Lyrics
 
-# Web application that allows registered users to post lyrics of the songs that are organized by Artists
+## Web application that allows registered users to post lyrics of the songs that are organized by Artists
 
 Stack:
 
